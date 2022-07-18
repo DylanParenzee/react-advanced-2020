@@ -3,10 +3,31 @@ import { data } from "../../../data";
 import { useState } from "react";
 
 const UseStateArray = () => {
-  const [people, setPeople] = useState(["this", "is", "crazy"]);
+  const [people, setPeople] = useState(data);
+
+  const removeItem = (id) => {
+    setPeople(people.filter((person) => person.id !== id));
+  };
+
   return (
     <div>
-      <h1>Use State Array</h1>
+      {people.map((person) => {
+        let { name, id } = person;
+        return (
+          <div key={id} className="item">
+            <h4>{name}</h4>
+            <button onClick={() => removeItem(id)}>Remove Item</button>
+          </div>
+        );
+      })}
+      <button
+        className="btn"
+        onClick={() => {
+          setPeople([]);
+        }}
+      >
+        Clear Items
+      </button>
     </div>
   );
 };
