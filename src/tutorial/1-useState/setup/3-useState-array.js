@@ -1,8 +1,14 @@
-import React from 'react';
-import { data } from '../../../data';
+import React from "react";
+import { data } from "../../../data";
+import { useState } from "react";
 
 const UseStateArray = () => {
-  return <h2>useState array example</h2>;
+  const [people, setPeople] = useState(["this", "is", "crazy"]);
+  return (
+    <div>
+      <h1>Use State Array</h1>
+    </div>
+  );
 };
 
 export default UseStateArray;
