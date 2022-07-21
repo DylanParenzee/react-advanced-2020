@@ -9,7 +9,9 @@ const UseStateObject = () => {
   const { name, age, message } = person;
 
   const changeMessage = () => {
-    setPerson({ ...person, message: "hello world" });
+    if (person.message === "aloha dude!") {
+      setPerson({ ...person, message: "hello world" });
+    } else setPerson({ ...person, message: "aloha dude!" });
   };
   return (
     <React.Fragment>
