@@ -5,23 +5,19 @@ const url = "https://api.github.com/users";
 const UseEffectFetchData = () => {
   const [users, setUsers] = useState([]);
 
-  const getUsers = async () => {
-    const response = await fetch(url);
-    const users = await response.json();
+  const getUsers = () => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data);
+      });
   };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   return (
     <>
+      {getUsers()}
       <h3>Github users</h3>
-      <ul className="users">
-        {users.map((user) => {
-          return <li key={user.id}>hello</li>;
-        })}
-      </ul>
+      <ul className="users"></ul>
     </>
   );
 };
