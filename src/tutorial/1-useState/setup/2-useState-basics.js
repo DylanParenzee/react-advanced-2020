@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 
-const UseStateBasics = () => {
-  const [text, setText] = useState("random title");
+const useStateBasics = () => {
+  const [text, setText] = useState("Hello");
 
   const handleClick = () => {
-    if (text === "random title") {
-      setText("Hello world");
+    if (text === "Hello") {
+      setText("Good-Bye");
     } else {
-      setText("random title");
+      setText("Hello");
     }
   };
+
   return (
-    <React.Fragment>
-      <h2>{text}</h2>
-      <button className="btn" type="button" onClick={handleClick}>
-        Change Text Of Title
+    <>
+      <h1>{text}</h1>
+      <button onClick={handleClick} className="btn">
+        Change Text
       </button>
-    </React.Fragment>
+    </>
   );
 };
 
-export default UseStateBasics;
+export default useStateBasics;
