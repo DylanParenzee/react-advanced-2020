@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-// preserves value
+// preserves values
 // DOES NOT trigger re-render
 // target DOM nodes/elements
 
